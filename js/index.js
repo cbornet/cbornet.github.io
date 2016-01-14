@@ -54,7 +54,7 @@ $('.navbar-collapse ul li a').click(function () {
                 }
             });
         }
-        
+
         getContributors();
 
         HomeService.getNpmDownloadsLastMonth('generator-jhipster').success(function (data) {
@@ -67,8 +67,15 @@ $('.navbar-collapse ul li a').click(function () {
         HomeService.getModules().success(function (data) {
             $scope.modules = data;
             var modulesList = '';
+            var getInfo = function(module) {
+              HomeService.getNpmInfo(module.npmPackageName).success(function (npminfo) {
+                    module.npminfo = npminfo;
+                });
+            }
             for (var i = 0; i < data.length; i++) {
+                var module = data[i];
                 modulesList += data[i].npmPackageName + ',';
+                getInfo(module);
             }
             HomeService.getNpmDownloadsLastMonth(modulesList).success(function (data) {
                 for (var i = 0; i < $scope.modules.length; i++) {
@@ -108,6 +115,11 @@ $('.navbar-collapse ul li a').click(function () {
             },
             getModules: function () {
                 return $http.get('/modules/marketplace/data/modules.json').success(function (resp) {
+                    return resp;
+                });
+            },
+            getNpmInfo: function (npmPackageName) {
+                return $http.get('https://cors-anywhere.herokuapp.com/registry.npmjs.org/' + npmPackageName + '/latest').success(function (resp) {
                     return resp;
                 });
             }

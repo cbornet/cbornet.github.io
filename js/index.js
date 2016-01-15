@@ -68,8 +68,16 @@ $('.navbar-collapse ul li a').click(function () {
             $scope.modules = data;
             var modulesList = '';
             var getInfo = function(module) {
-              HomeService.getNpmInfo(module.npmPackageName).success(function (npminfo) {
+                HomeService.getNpmInfo(module.npmPackagePath).success(function (npminfo) {
                     module.npminfo = npminfo;
+                    if (angular.isString(npminfo.author)) {
+                        var re = /^([^<(]+?)?[ \t]*(?:<([^>(]+?)>)?[ \t]*(?:\(([^)]+?)\)|$)/gm;
+                        var author = re.exec(npminfo.author);
+                        module.npminfo.author = { name: author[1] || '',
+                            email: author[2] || '',
+                            url: author[3] || ''
+                        };
+                    }
                 });
             }
             for (var i = 0; i < data.length; i++) {
@@ -118,8 +126,8 @@ $('.navbar-collapse ul li a').click(function () {
                     return resp;
                 });
             },
-            getNpmInfo: function (npmPackageName) {
-                return $http.get('https://cors-anywhere.herokuapp.com/registry.npmjs.org/' + npmPackageName + '/latest').success(function (resp) {
+            getNpmInfo: function (npmPackagePath) {
+                return $http.get(npmPackagePath).success(function (resp) {
                     return resp;
                 });
             }

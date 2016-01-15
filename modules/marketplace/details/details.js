@@ -14,8 +14,13 @@ marketplaceApp.controller('ModuleDetailsCtrl', function ($scope, $routeParams, $
           var module = data[i];
           if (module.npmPackageName == $scope.npmPackageName) {
               $scope.module = module;
-              $http.get('https://cors-anywhere.herokuapp.com/registry.npmjs.org/' + module.npmPackageName + '/latest').success(function (npminfo) {
+              $http.get(module.npmPackagePath).success(function (npminfo) {
                   $scope.module.npminfo = npminfo;
+                  if (angular.isString(npminfo.author)) {
+                      var re = /^([^<(]+?)?[ \t]*(?:<([^>(]+?)>)?[ \t]*(?:\(([^)]+?)\)|$)/gm;
+                      var author = re.exec(npminfo.author);
+                      $scope.module.npminfo.author = { name: author[1] || '', email: author[2] || '', url: author[3] || '' };
+                  }
               });
           }
       }

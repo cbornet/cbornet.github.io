@@ -2,76 +2,91 @@
     {
         "name": "Fortune",
         "npmPackageName": "generator-jhipster-fortune",
+        "npmPackagePath": "https://raw.githubusercontent.com/jdubois/generator-jhipster-fortune/v0.0.2/package.json",
         "verified": true
     },
     {
         "name": "Docker",
         "npmPackageName": "generator-jhipster-docker",
+        "npmPackagePath": "https://raw.githubusercontent.com/pascalgrimaud/generator-jhipster-docker/v0.0.13/package.json",
         "verified": false
     },
     {
         "name": "Continuous Integration",
         "npmPackageName": "generator-jhipster-ci",
+        "npmPackagePath": "https://raw.githubusercontent.com/pascalgrimaud/generator-jhipster-ci/v0.0.4/package.json",
         "verified": false
     },
     {
         "name": "Module Generator",
         "npmPackageName": "generator-jhipster-module",
+        "npmPackagePath": "https://raw.githubusercontent.com/jhipster/generator-jhipster-module/v0.0.8/package.json",
         "verified": false
     },
     {
         "name": "Swagger2Markup",
         "npmPackageName": "generator-jhipster-swagger2markup",
+        "npmPackagePath": "https://raw.githubusercontent.com/atomfrede/generator-jhipster-swagger2markup/v0.0.9/package.json",
         "verified": false
     },
     {
         "name": "AngularUI",
         "npmPackageName": "generator-jhipster-angular-ui",
+        "npmPackagePath": "https://raw.githubusercontent.com/moifort/generator-jhipster-angular-ui/master/package.json",
         "verified": false
     },
     {
         "name": "Google analytics",
         "npmPackageName": "generator-jhipster-google-analytics",
+        "npmPackagePath": "https://raw.githubusercontent.com/moifort/generator-jhipster-google-analytics/master/package.json",
         "verified": false
     },
     {
         "name": "Google maps",
         "npmPackageName": "generator-jhipster-google-maps",
+        "npmPackagePath": "https://raw.githubusercontent.com/moifort/generator-jhipster-google-maps/master/package.json",
         "verified": false
     },
     {
         "name": "Bootstrap Material design",
         "npmPackageName": "generator-jhipster-bootstrap-material-design",
+        "npmPackagePath": "https://raw.githubusercontent.com/moifort/generator-jhipster-bootstrap-material-design/master/package.json",
         "verified": false
     },
     {
         "name": "Entity Audit",
         "npmPackageName": "generator-jhipster-entity-audit",
+        "npmPackagePath": "https://raw.githubusercontent.com/deepu105/generator-jhipster-entity-audit/1.0.4/package.json",
         "verified": false
     },
     {
         "name": "Bootswatch Themes",
         "npmPackageName": "generator-jhipster-bootswatch",
+        "npmPackagePath": "https://raw.githubusercontent.com/deepu105/generator-jhipster-bootswatch/0.2.1/package.json",
         "verified": false
     },
     {
         "name": "Debian packager",
         "npmPackageName": "generator-jhipster-debian-packager",
+        "npmPackagePath": "https://raw.githubusercontent.com/cbornet/generator-jhipster-debian-packager/v0.3.0/package.json",
         "verified": false
     },
     {
         "name": "Leaflet Maps",
         "npmPackageName": "generator-jhipster-leaflet",
+        "npmPackagePath": "https://raw.githubusercontent.com/atomfrede/generator-jhipster-leaflet/v0.0.1/package.json",
         "verified": false
     },
     {
         "name": "Basic authentication",
         "npmPackageName": "generator-jhipster-basic-auth",
+        "npmPackagePath": "https://raw.githubusercontent.com/cbornet/generator-jhipster-basic-auth/v0.2.0/package.json",
         "verified": false
     },
     {
         "name": "Elasticsearch Reindexer",
         "npmPackageName": "generator-jhipster-elasticsearch-reindexer",
+        "npmPackagePath": "https://raw.githubusercontent.com/geraldhumphries/generator-jhipster-elasticsearch-reindexer/v0.0.5/package.json",
         "verified": false
     }
 ]

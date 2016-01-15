@@ -11,8 +11,16 @@ marketplaceApp.controller('ModuleListCtrl', function ($scope, $http, $location, 
     $scope.modules = data;
     var modulesList= '';
     var getInfo = function(module) {
-        $http.get('https://raw.githubusercontent.com/cbornet/generator-jhipster-basic-auth/v0.2.0/package.json').success(function (npminfo) {
+        $http.get(module.npmPackagePath).success(function (npminfo) {
             module.npminfo = npminfo;
+            if (angular.isString(npminfo.author)) {
+                var re = /^([^<(]+?)?[ \t]*(?:<([^>(]+?)>)?[ \t]*(?:\(([^)]+?)\)|$)/gm;
+                var author = re.exec(npminfo.author);
+                module.npminfo.author = { name: author[1] || '',
+                    email: author[2] || '',
+                    url: author[3] || ''
+                };
+            }
         });
     }
 
